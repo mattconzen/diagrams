@@ -8,12 +8,12 @@ class _Machine(_Generic):
     _icon_dir = "resources/generic/machine"
 
 
-class Server(_Machine):
-    _icon = "server.png"
-
-
-class Laptop(_Machine):
+class LAPTOP(_Machine):
     _icon = "laptop.png"
+
+
+class SERVER(_Machine):
+    _icon = "server.png"
 
 
 # Aliases

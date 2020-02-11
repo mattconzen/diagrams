@@ -10,7 +10,7 @@ DIR_APP_ROOT = "diagrams"
 DIR_RESOURCE = "resources"
 DIR_TEMPLATE = "templates"
 
-PROVIDERS = ("base", "aws", "azure", "gcp", "k8s")
+PROVIDERS = ("base", "aws", "azure", "gcp", "generic", "k8s")
 
 #########################
 #  Resource Processing  #
@@ -26,6 +26,7 @@ FILE_PREFIXES = {
     "azure": ("azure-",),
     "gcp": ("cloud-",),
     "k8s": (),
+    "gen": (),
 }
 
 #########################
@@ -38,6 +39,7 @@ UPPER_WORDS = {
     "aws": ("aws", "api", "ebs", "ec2", "efs", "emr", "rds", "ml", "mq", "vpc", "waf"),
     "azure": ("ad", "b2c", "ai", "api", "cdn", "ddos", "dns", "fxt", "hana", "hd", "id", "sap", "sql", "vm"),
     "gcp": ("gcp", "ai", "api", "cdn", "dns", "gke", "gpu", "ml", "nat", "os", "sdk", "sql", "tpu", "vpn"),
+    "generic": ("db", "cass", "mysql", "psql", "laptop", "server"),
     "k8s": (
         "api", "cm", "ccm", "crb", "crd", "ds", "etcd", "hpa", "ns", "psp", "pv", "pvc", "rb", "rs", "sa", "sc", "sts",
         "svc"),
@@ -148,6 +150,10 @@ ALIASES = {
         "storage": {
             "Storage": "GCS",
         },
+    },
+    "generic": {
+        "database": {},
+        "machine": {}
     },
     "k8s": {
         "clusterconfig": {

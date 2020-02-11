@@ -48,6 +48,15 @@ def cleaner_gcp(f):
     return f.lower()
 
 
+def cleaner_gen(f):
+    f = f.replace("-256", "")
+    for p in cfg.FILE_PREFIXES["gen"]:
+        if f.startswith(p):
+            f = f[len(p):]
+            break
+    return f.lower()
+
+
 def cleaner_k8s(f):
     f = f.replace("-256", "")
     for p in cfg.FILE_PREFIXES["k8s"]:
@@ -61,6 +70,7 @@ cleaners = {
     "aws": cleaner_aws,
     "azure": cleaner_azure,
     "gcp": cleaner_gcp,
+    "generic": cleaner_gen,
     "k8s": cleaner_k8s,
 }
 
