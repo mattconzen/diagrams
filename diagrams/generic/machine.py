@@ -15,5 +15,5 @@ class Server(_Machine):
 class Laptop(_Machine):
     _icon = "laptop.png"
 
-# Aliases
 
+# Aliases
